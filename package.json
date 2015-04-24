@@ -1,9 +1,13 @@
 {
   "name": "checklist",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "clean": "npm run clean:delete && npm run clean:makedir",
+    "clean:delete": "rimraf -r dist",
+    "clean:makedir": "mkdirp dist/docs",
+    "dev:docserver": "yuidoc --server 3100",
+    "build:docs": "npm run clean:makedir && yuidoc"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
@@ -12,9 +16,15 @@
     "express": "~4.12.2",
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
-    "normalize.css": "^3.0.3",
-    "requirejs": "^2.1.17",
+    "normalize.css": "~3.0.3",
+    "requirejs": "~2.1.17",
     "serve-favicon": "~2.2.0",
-    "stylus": "0.51.0"
+    "stylus": "~0.51.0"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.0",
+    "parallelshell": "^1.1.1",
+    "rimraf": "^2.3.2",
+    "yuidocjs": "~0.6.0"
   }
 }

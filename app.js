@@ -12,7 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'jade'); 
 
 app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
@@ -24,7 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use("/css", express.static(path.join(__dirname, "node_modules", "normalize.cc")))
+app.use("/css",
+  express.static(path.join(__dirname, "node_modules", "normalize.css"))
+);
+app.use(express.static(path.join(__dirname, "node_modules", "requirejs")));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

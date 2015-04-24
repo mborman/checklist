@@ -1,0 +1,11 @@
+{
+  "name": "Checklist",
+  "description": "make a list. Check it. Twice",
+  "version": "0.0.1",
+  "url": "http://localhost:3100/",
+  "options": {
+    "linkNatives": "true",
+    "outdir": "./dist/docs",
+    "paths": "public/js**"
+  }
+}
